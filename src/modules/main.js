@@ -7,6 +7,7 @@ function testCalc() {
     calculator.execute(new Add(10));
     calculator.execute(new Multiply(10));
     calculator.execute(new Logarithm(10));
+    calculator.execute(new Add(34.56));
 
     //calculator.undo();
 

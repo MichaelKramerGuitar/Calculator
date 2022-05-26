@@ -3,29 +3,141 @@ https://uicookies.com/css-background-pattern/*/
 /*@import url('https://fonts.googleapis.com/css?family=Exo:400,700');*/
 
 /*https://freshman.tech/css-grid-calculator/*/
+/**, *::before, *::after {*/
+/*    box-sizing: border-box;*/
+/*    font-family: Gotham Rounded, sans-serif;*/
+/*    font-weight: normal;*/
+/*}*/
+
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    color: #289E79 ;*/
+/*}*/
+
+/*body{*/
+/*    font-family: system-ui, sans-serif;*/
+/*}*/
+
+/*.output{*/
+/*    !*grid-column: 1 / -1;*!*/
+/*    background-color: rgba(0, 0, 0, 0.75);*/
+/*    display: flex;*/
+/*    align-items: flex-end;*/
+/*    !*justify-content: space-around;*!*/
+/*    !*flex-direction: column;*!*/
+/*    !*padding: 10px;*!*/
+/*    !*word-wrap: break-word;*!*/
+/*    !*word-break: break-all;*!*/
+/*}*/
+
+/*.output .previous-operand {*/
+/*    color: rgba(255,255, 255, 0.75);*/
+/*    font-size: 1.5rem;*/
+/*}*/
+
+/*.output .current-operand{*/
+/*    color: white;*/
+/*    font-size: 2.5rem;*/
+/*}*/
+/*.calculator-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(4, 8em);*/
+/*    !*grid-template-rows: auto auto auto auto;*!*/
+/*    grid-template-rows: repeat(6, 1fr);*/
+
+/*    box-sizing: border-box;*/
+/*    height: 30em;*/
+/*    width: 15em;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    justify-content: center;*/
+/*    !*align-items: flex-start;*!*/
+/*    min-height: 20em;*/
+/*    !*grid-auto-rows: 100px;*!*/
+
+/*    !*grid-template-areas:*!*/
+/*    !*    "AC UNDO"*!*/
+/*    !*    "EXP LOG"*!*/
+/*    !*    "1 2 3 +"*!*/
+/*    !*    "4 5 6 -"*!*/
+/*    !*    "7 8 9 *"*!*/
+/*    !*    ". 0 / =";*!*/
+/*    !**!*/
+/*    !*grid-template-rows: minmax(120px, auto) repeat(5, 100px);*!*/
+/*    !*grid-auto-flow: row dense;*!*/
+/*    !*grid-gap: 4px;*!*/
+/*}*/
+
+/*.calculator-grid button {*/
+/*    !*cursor: pointer;*!*/
+/*    font-size: 2rem;*/
+/*    border: 3px solid #FFFFFF;*/
+/*    outline: none;*/
+/*    background-color: rgba(255, 255, 255, 0.75);*/
+
+/*}*/
+
+/*button:hover {*/
+/*    background-color: grey;*/
+/*}*/
+/*!*.calculator-grid button:hover {*!*/
+/*!*    color: green;*!*/
+/*!*}*!*/
+
+/*!*.span-two {*!*/
+/*!*    grid-column: span 2;*!*/
+/*!*    color: #adf802;*!*/
+/*!*    !*background-color: rgba(139, 0, 139, 0.8);*!*!*/
+/*!*}*!*/
+
+
+/*.message {*/
+/*    width: 100%;*/
+/*    position: absolute;*/
+/*    top:50vh;*/
+
+/*}*/
+
+/*.message h1{*/
+/*    text-align: center;*/
+/*    color: #fff;*/
+/*    font-size: 50px;*/
+/*}*/
+
+/*#welcome-message {*/
+/*    color: #8F349D;*/
+/*}*/
+
+/*.area{*/
+/*    background: #B8ECEE;*/
+/*    !*background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);*!*/
+/*    width: 100%;*/
+/*    height:100vh;*/
+
+
+/*}*/
+
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded, sans-serif;
     font-weight: normal;
 }
 
-*{
+body {
     margin: 0;
     padding: 0;
-    color: #289E79 ;
-}
-
-body{
-    font-family: system-ui, sans-serif;
+    background: linear-gradient(#6EDCC7, #6EC8DC);
 }
 
 .calculator-grid {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
 }
 
 .calculator-grid > button {
@@ -34,7 +146,6 @@ body{
     border: 1px solid #FFFFFF;
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
-
 }
 
 .calculator-grid > button:hover {
@@ -43,13 +154,17 @@ body{
 
 .span-two {
     grid-column: span 2;
-    color: #adf802;
-    background-color: rgba(139, 0, 139, 0.8);
+    color: #089374;
+    /*background-color: rgba(139, 0, 139, 0.8);*/
+}
+
+.special-ops {
+    grid-column: span 2;
 }
 
 .output{
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 1);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -59,7 +174,7 @@ body{
     word-break: break-all;
 }
 
-.output .previous-operand {
+.output .previous-operand{
     color: rgba(255,255, 255, 0.75);
     font-size: 1.5rem;
 }
@@ -67,32 +182,6 @@ body{
 .output .current-operand{
     color: white;
     font-size: 2.5rem;
-}
-
-.message {
-    width: 100%;
-    position: absolute;
-    top:50vh;
-
-}
-
-.message h1{
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
-#welcome-message {
-    color: #8F349D;
-}
-
-.area{
-    background: #B8ECEE;
-    /*background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);*/
-    width: 100%;
-    height:100vh;
-
-
 }
 
 .operators{
