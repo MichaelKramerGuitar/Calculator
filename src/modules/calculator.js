@@ -129,10 +129,18 @@ export class Calculator {
         return this.getValue();
     }
 
+    // shoutOut() {
+    //     if (this.getValue() > 10) {
+    //         alert('That\'s a big number!');
+    //     }
+    //     else {
+    //         alert('That\'s a small number...');
+    //     }
+    // }
     displayPrev() {
         let operation = this.operations.pop();
         return operation.getValue();
     }
 }
 
-// TODO Invoker: the user pushing the buttons on the calculator
+// Invoker: the user pushing the buttons on the calculator
