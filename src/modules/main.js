@@ -40,7 +40,7 @@ const previous = document.getElementById('previous');
 
 const operations = document.getElementsByClassName('operation');
 
-current.innerHTML = calc.display();
+current.innerHTML = calc.display(); // initialized at 0
 
 input.addEventListener("click", (event) => {
     previous.innerHTML += " " + event.target.value;
@@ -55,11 +55,6 @@ input.addEventListener("click", (event) => {
 
     }
     else { // get proper operator
-        // alert(operator.innerHTML)
-        // let prev = current.innerHTML;
-        // if(current.innerHTML === "0"){
-        //     calc.execute(new Add(parseFloat(current.innerHTML)));
-        // }
         if (operator.innerHTML === "/") {
             calc.execute(new Divide(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
@@ -76,7 +71,8 @@ input.addEventListener("click", (event) => {
             calc.execute(new Subtract(parseFloat(current.innerText)))
             current.innerHTML = calc.display();
         }
-        // previous.innerHTML = prev + " " + operator.innerHTML + " " + calc.displayPrev();
+        previous.innerHTML += " " + calc.display();
+        operator.innerHTML = "";
     }
 })
 
