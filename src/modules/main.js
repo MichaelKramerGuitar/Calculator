@@ -40,30 +40,43 @@ const previous = document.getElementById('previous');
 
 const operations = document.getElementsByClassName('operation');
 
-current.innerHTML = "0"; // initialize display
+current.innerHTML = calc.display();
 
 input.addEventListener("click", (event) => {
-    console.log(event.target)
-    if(event.target.id in operations) {
+    previous.innerHTML += " " + event.target.value;
+    if(event.target.id != "equals" && event.target.id in operations) {
         operator.innerHTML = event.target.value;
     }
     else if (!(event.target.id in operations)) {
         current.innerHTML = event.target.value;
+        if (calc.getValue() === 0) { // first operation and any subsequent when current value is zero
+            calc.execute(new Add(parseFloat(event.target.value)))
+        }
+
     }
     else { // get proper operator
-        alert(operator.innerHTML)
+        // alert(operator.innerHTML)
+        // let prev = current.innerHTML;
         // if(current.innerHTML === "0"){
         //     calc.execute(new Add(parseFloat(current.innerHTML)));
         // }
-        previous.innerHTML = calc.getValue();
         if (operator.innerHTML === "/") {
             calc.execute(new Divide(parseFloat(current.innerHTML)))
-            current.innerHTML = calc.getValue();
+            current.innerHTML = calc.display();
         }
         else if(operator.innerHTML === "+") {
             calc.execute(new Add(parseFloat(current.innerHTML)))
-            current.innerHTML = calc.getValue();
+            current.innerHTML = calc.display();
         }
+        else if(operator.innerHTML === "*") {
+            calc.execute(new Multiply(parseFloat(current.innerHTML)))
+            current.innerHTML = calc.display();
+        }
+        else if(operator.innerHTML === "-") {
+            calc.execute(new Subtract(parseFloat(current.innerText)))
+            current.innerHTML = calc.display();
+        }
+        // previous.innerHTML = prev + " " + operator.innerHTML + " " + calc.displayPrev();
     }
-
 })
+

@@ -128,6 +128,11 @@ export class Calculator {
     display() {
         return this.getValue();
     }
+
+    displayPrev() {
+        let operation = this.operations.pop();
+        return operation.getValue();
+    }
 }
 
 // TODO Invoker: the user pushing the buttons on the calculator
