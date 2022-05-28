@@ -5,7 +5,7 @@ https://uicookies.com/css-background-pattern/*/
 /*https://freshman.tech/css-grid-calculator/*/
 
 *, *::before, *::after {
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
     font-family: system-ui, sans-serif;
     font-weight: normal;
 }
@@ -17,48 +17,36 @@ body {
     background: linear-gradient(#6EDCC7, #6EC8DC);
 }
 
-.calculator-grid {
+.calculator {
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-
-.calculator-grid > .input {
-    font-size: 2rem;
-    border: 3px solid #FFFFFF;
+.calculator > button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: solid #FFFFFF;
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-/*.calculator-grid > button:hover {*/
-/*    font-size: 1.5em;*/
-/*    color: green;*/
+.calculator > button:hover {
+    background-color: #a9a9a9;
+}
+
+/*.span-two {*/
+/*    grid-column: span 2;*/
+/*    color: #adf802;*/
+/*    background-color: rgba(139, 0, 139, 0.8);*/
 /*}*/
-
-input:hover {
-    cursor: pointer;
-    font-size: 1.01rem;
-    background-color: lightblue;
-}
-
-.span-two {
-    grid-column: span 2;
-    color: #089374;
-    /*background-color: rgba(139, 0, 139, 0.8);*/
-}
-
-.special-ops {
-    cursor: pointer;
-    grid-column: span 2;
-}
 
 .output{
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -78,10 +66,7 @@ input:hover {
     font-size: 2.5rem;
 }
 
-.output .operator {
-    color: grey;
-    font-size: 1rem;
-}
+
 
 /*.operators{*/
 /*    position: absolute;*/
@@ -96,7 +81,7 @@ input:hover {
 /*    position: absolute;*/
 /*    display: inline-block;*/
 /*    list-style: none;*/
-/*    animation: animate 25s linear infinite;*/
+/*    animation: animate 3s;*/
 /*    bottom: -150px;*/
 /*    align-items: center;*/
 /*    justify-content: center;*/
@@ -109,7 +94,7 @@ input:hover {
 /*    left: 25%;*/
 /*    width: 80px;*/
 /*    height: 80px;*/
-/*    animation-delay: 0s;*/
+/*    !*animation-delay: 0s;*!*/
 /*}*/
 
 
@@ -117,68 +102,68 @@ input:hover {
 /*    left: 10%;*/
 /*    width: 20px;*/
 /*    height: 20px;*/
-/*    animation-delay: 2s;*/
-/*    animation-duration: 12s;*/
+/*    !*animation-delay: 2s;*!*/
+/*    animation-duration: 2s;*/
 /*}*/
 
 /*.operators li:nth-child(3){*/
 /*    left: 70%;*/
 /*    width: 20px;*/
 /*    height: 20px;*/
-/*    animation-delay: 4s;*/
+/*    !*animation-delay: 4s;*!*/
 /*}*/
 
 /*.operators li:nth-child(4){*/
 /*    left: 40%;*/
 /*    width: 60px;*/
 /*    height: 60px;*/
-/*    animation-delay: 0s;*/
-/*    animation-duration: 18s;*/
+/*    !*animation-delay: 0s;*!*/
+/*    animation-duration: 2s;*/
 /*}*/
 
 /*.operators li:nth-child(5){*/
 /*    left: 65%;*/
 /*    width: 20px;*/
 /*    height: 20px;*/
-/*    animation-delay: 0s;*/
+/*    !*animation-delay: 0s;*!*/
 /*}*/
 
 /*.operators li:nth-child(6){*/
 /*    left: 75%;*/
 /*    width: 110px;*/
 /*    height: 110px;*/
-/*    animation-delay: 3s;*/
+/*    !*animation-delay: 3s;*!*/
 /*}*/
 
 /*.operators li:nth-child(7){*/
 /*    left: 35%;*/
 /*    width: 150px;*/
 /*    height: 150px;*/
-/*    animation-delay: 7s;*/
+/*    !*animation-delay: 7s;*!*/
 /*}*/
 
 /*.operators li:nth-child(8){*/
 /*    left: 50%;*/
 /*    width: 25px;*/
 /*    height: 25px;*/
-/*    animation-delay: 15s;*/
-/*    animation-duration: 45s;*/
+/*    !*animation-delay: 15s;*!*/
+/*    animation-duration: 3s;*/
 /*}*/
 
 /*.operators li:nth-child(9){*/
 /*    left: 20%;*/
 /*    width: 15px;*/
 /*    height: 15px;*/
-/*    animation-delay: 2s;*/
-/*    animation-duration: 35s;*/
+/*    !*animation-delay: 2s;*!*/
+/*    animation-duration: 3s;*/
 /*}*/
 
 /*.operators li:nth-child(10){*/
 /*    left: 85%;*/
 /*    width: 150px;*/
 /*    height: 150px;*/
-/*    animation-delay: 0s;*/
-/*    animation-duration: 11s;*/
+/*    !*animation-delay: 0s;*!*/
+/*    animation-duration: 1s;*/
 /*}*/
 
 

@@ -9,53 +9,80 @@
     <title>Welcome to Calculator</title>
 </head>
 <body class="area">
-    <section class="message">
-        <h1 id="welcome-message"></h1>
-    </section>
+<!--    <nav class="operators">-->
+<!--        <ul>-->
+<!--            <li>&#43;</li>-->
+<!--            <li>&#8722;</li>-->
+<!--            <li>&#215;</li>-->
+<!--            <li>&#247;</li>-->
+<!--            <li>&#61;</li>-->
+<!--            <li>&#8800;</li>-->
+<!--            <li>&#177;</li>-->
+<!--            <li>&#172;</li>-->
+<!--            <li>&#43;</li>-->
+<!--            <li>&#215;</li>-->
+<!--        </ul>-->
+
+<!--    </nav>-->
+    <header class="message">
+        <h1 loading="lazy" id="welcome-message"></h1>
+    </header>
 <!--https://www.section.io/engineering-education/building-a-calculator-a-javascript-project-for-beginners/-->
 
-    <section class="calculator-grid">
-        <div class="output">
-            <div class="previous-operand" id="previous"></div>
-            <div class="operator" id="operator"></div>
-            <div class="current-operand" id="current"></div>
-        </div>
-        <div class="input" id="input">
-            <input type="button" id="ac" value="AC" class="undo-op">
-            <input type="button" id="undo" class="span-two" value="UNDO" class="undo-op">
-            <input type="button" id="divide" value="/" class="operation">
-            <input type="button" id="log" value="LOG" class="operation">
-            <input type="button" id="exp" value="^" class="operation">
-            <input type="button" id="one" value="1">
-            <input type="button" id="two" value="2">
-            <input type="button" id="three" value="3">
-            <input type="button" id="multiply" value="*" class="operation">
-            <input type="button" id="four" value="4">
-            <input type="button" id="five" value="5">
-            <input type="button" id="six" value="6">
-            <input type="button" id="add" value="+" class="operation">
-            <input type="button" id="seven" value="7">
-            <input type="button" id="eight" value="8">
-            <input type="button" id="nine" value="9">
-            <input type="button" id="subtract" value="-" class="operation">
-            <input type="button" id="decimal" value=".">
-            <input type="button" id="zero" value="0">
-            <input type="button" id="equals" value="=" class="operation">
-        </div>
-    </section>
+<!--        <div class="output">-->
+<!--            <div class="previous-operand" id="previous"></div>-->
+<!--            <div class="operator" id="operator"></div>-->
+<!--            <div class="current-operand" id="current"></div>-->
+<!--        </div>-->
+<!--        <div class="input" id="input">-->
+<!--            <input type="button" id="ac" value="AC" class="undo-op, row1">-->
+<!--            <input type="button" id="undo" value="UNDO" class="undo-op, row2">-->
+<!--            <input type="button" id="divide" value="/" class="operation, row3">-->
+<!--            <input type="button" id="log" value="LOG" class="operation, row4">-->
+<!--            <input type="button" id="exp" value="^" class="operation">-->
+<!--            <input type="button" id="one" value="1">-->
+<!--            <input type="button" id="two" value="2">-->
+<!--            <input type="button" id="three" value="3">-->
+<!--            <input type="button" id="multiply" value="*" class="operation">-->
+<!--            <input type="button" id="four" value="4">-->
+<!--            <input type="button" id="five" value="5">-->
+<!--            <input type="button" id="six" value="6">-->
+<!--            <input type="button" id="add" value="+" class="operation">-->
+<!--            <input type="button" id="seven" value="7">-->
+<!--            <input type="button" id="eight" value="8">-->
+<!--            <input type="button" id="nine" value="9">-->
+<!--            <input type="button" id="subtract" value="-" class="operation">-->
+<!--            <input type="button" id="decimal" value=".">-->
+<!--            <input type="button" id="zero" value="0">-->
+<!--            <input type="button" id="equals" value="=" class="operation">-->
+<!--        </div>-->
+        <section class="calculator" id="input">
+            <div class="output">
+                <div class="previous-operand" id="previous"></div>
+                <div class="operator" id="operator"></div>
+                <div class="current-operand" id="current"></div>
+            </div>
+            <button type="button" id="divide" value="/" class="operation">/</button>
+            <button type="button" id="log" value="LOG" class="operation">LOG</button>
+            <button type="button" id="ac" value="AC" class="undo-op">AC</button>
+            <button type="button" id="undo" value="UNDO" class="undo-op">UNDO</button>
+            <button type="button" id="exp" value="^" class="operation">^</button>
+            <button type="button" id="one" value="1">1</button>
+            <button type="button" id="two" value="2">2</button>
+            <button type="button" id="three" value="3">3</button>
+            <button type="button" id="multiply" value="*" class="operation">*</button>
+            <button type="button" id="four" value="4">4</button>
+            <button type="button" id="five" value="5">5</button>
+            <button type="button" id="six" value="6">6</button>
+            <button type="button" id="add" value="+" class="operation">+</button>
+            <button type="button" id="seven" value="7">7</button>
+            <button type="button" id="eight" value="8">8</button>
+            <button type="button" id="nine" value="9">9</button>
+            <button type="button" id="subtract" value="-" class="operation">-</button>
+            <button type="button" id="decimal" value=".">.</button>
+            <button type="button" id="zero" value="0">0</button>
+            <button type="button" id="equals" value="=" class="operation">=</button>
+        </section>
 
-
-<!--    <ul class="operators">-->
-<!--        <li>&#43;</li>-->
-<!--        <li>&#8722;</li>-->
-<!--        <li>&#215;</li>-->
-<!--        <li>&#247;</li>-->
-<!--        <li>&#61;</li>-->
-<!--        <li>&#8800;</li>-->
-<!--        <li>&#177;</li>-->
-<!--        <li>&#172;</li>-->
-<!--        <li>&#43;</li>-->
-<!--        <li>&#215;</li>-->
-<!--    </ul>-->
 </body>
 </html>

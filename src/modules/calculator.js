@@ -78,7 +78,7 @@ function div(x, y) {
 }
 
 function exp(x, y) {
-    return x ** y;
+    return Math.pow(x, y);
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log
@@ -129,18 +129,6 @@ export class Calculator {
         return this.getValue();
     }
 
-    // shoutOut() {
-    //     if (this.getValue() > 10) {
-    //         alert('That\'s a big number!');
-    //     }
-    //     else {
-    //         alert('That\'s a small number...');
-    //     }
-    // }
-    displayPrev() {
-        let operation = this.operations.pop();
-        return operation.getValue();
-    }
 }
 
 // Invoker: the user pushing the buttons on the calculator
