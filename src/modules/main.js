@@ -20,9 +20,10 @@ window.addEventListener('load', () => {
     let name = window.prompt("But first, what's your name?")
     let welcome = document.getElementById("welcome-message");
     // let welcome = document.querySelector("welcome");
-    welcome.innerHTML = "Welcome, " + name + "!";
+    welcome.innerHTML = "Happy calculating, " + name + "!";
     // display name on page
     document.body.appendChild(welcome);
+    alert("Welcome, " + name + "!")
 });
 
 
@@ -63,9 +64,9 @@ while(less) { // arbitrarily exhibiting a while loop
 current.innerHTML = calc.display(); // initialized at 0
 
 input.addEventListener("click", (event) => {
-    previous.innerHTML += " " + event.target.value;
+    previous.innerHTML += " " + event.target.value; // populate history of commands
     if (event.target.id !== "equals" && event.target.id in operations) {
-        operator.innerHTML = event.target.value;
+        operator.innerHTML = event.target.value; // populate operation area
     } else if (!(event.target.id in operations)) { // numbers or undo's
         // alert('number or undo op')
         current.innerHTML = event.target.value;
@@ -76,11 +77,11 @@ input.addEventListener("click", (event) => {
             calc.undo(); // undo previous operation
             current.innerHTML = calc.display();
         }
-    } else if (event.target.id === "ac") {
-        alert('ac!!')
-        calc.setValue(0);
-        current.innerHTML = calc.display();
-    } else { // get proper operator
+        else if (event.target.id === "all-clear") {
+            calc.setValue(0);
+            current.innerHTML = calc.display();
+        }
+    }  else { // get proper operator
         if (operator.innerHTML === "/") {
             calc.execute(new Divide(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
@@ -118,6 +119,7 @@ function evaluateSize() { // as per requirements
 function promptContinue() { // as per requirements
     let response = window.prompt("would you like to continue, type: \"yes\" or \"no\"").toLowerCase();
     if(response.startsWith('n')) {
+        alert('Thank you for using Calculator!')
         window.close();
     }
 

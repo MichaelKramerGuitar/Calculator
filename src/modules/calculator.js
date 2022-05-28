@@ -77,6 +77,8 @@ function div(x, y) {
     return x / y;
 }
 
+// need to research bugs with undoing exponents and logs
+// https://stackoverflow.com/questions/4016213/whats-the-opposite-of-javascripts-math-pow
 function exp(x, y) {
     return Math.pow(x, y);
 }
