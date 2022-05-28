@@ -1,5 +1,7 @@
 import {Calculator, Add, Subtract, Divide, Multiply, Exponent, Logarithm,} from './calculator.js';
 
+// html 5 drag and drop
+
 // Client in Command Pattern
 function testCalc() {
     let calculator = new Calculator();
@@ -15,7 +17,7 @@ testCalc();
 
 // alert when page loads
 window.addEventListener('load', () => {
-    alert('Welcome to Calculator!\nWe\'re all loaded up and ready to begin...');
+    alert('Welcome to Calculator!\nWe\'re almost loaded up and ready to begin...');
     // prompt for name
     let name = window.prompt("But first, what's your name?")
     let welcome = document.getElementById("welcome-message");
@@ -116,11 +118,17 @@ function evaluateSize() { // as per requirements
     }
 }
 
-function promptContinue() { // as per requirements
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+async function promptContinue() { // as per requirements
+    await sleep(2000)
     let response = window.prompt("would you like to continue, type: \"yes\" or \"no\"").toLowerCase();
     if(response.startsWith('n')) {
         alert('Thank you for using Calculator!')
         window.close();
     }
-
 }
+
