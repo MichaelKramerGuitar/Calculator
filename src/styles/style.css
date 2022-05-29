@@ -10,28 +10,43 @@ https://uicookies.com/css-background-pattern/*/
     font-weight: normal;
 }
 
-
+/*background from:*/
+/*https://projects.verou.me/css3patterns/#lined-paper*/
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(#6EDCC7, #6EC8DC);
+    background-color: #fff;
+    background-image:
+            linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
 }
 
+
 .calculator {
+    padding: 1.5rem;
     display: grid;
     justify-content: center;
     align-content: center;
     min-height: 80vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(4, 5em);
+    grid-template-rows: minmax(5.1em, auto) repeat(5, 5em);
 }
 
 .calculator > button {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     border: solid #FFFFFF;
     outline: none;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.calculator .operation {
+    background-color: lightgrey;
+}
+
+.calculator .undo-op {
+    background-color: azure;
 }
 
 .calculator > button:hover {
@@ -45,12 +60,12 @@ body {
 
 .output{
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 1);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
-    padding: 10px;
+    padding: 0.5rem;
     color: grey;
     word-wrap: break-word;
     word-break: break-all;
@@ -65,4 +80,8 @@ body {
 .output .current-operand{
     color: white;
     font-size: 2.5rem;
+}
+
+.message {
+    padding-left: 5.1rem;
 }

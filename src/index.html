@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--style sheet-->
-    <link rel="stylesheet" href="styles/style.css">
-    <script type="module" src="modules/main.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="module" src="./modules/main.js"></script>
     <title>Welcome to Calculator</title>
 </head>
 <body class="area">
-    <header class="message">
-        <h1 loading="lazy" id="welcome-message"></h1>
+    <header>
+        <h1 class="message" id="welcome-message">Welcome!</h1>
     </header>
 <!--https://www.section.io/engineering-education/building-a-calculator-a-javascript-project-for-beginners/-->
-        <section class="calculator" id="input">
+        <div class="calculator" id="input">
             <div class="output">
+
                 <div class="previous-operand" id="previous"></div>
                 <div class="operator" id="operator"></div>
                 <div class="current-operand" id="current"></div>
             </div>
-<!--            <button type="button" id="log" value="LOG" class="operation">LOG</button>-->
+            <button type="button" id="log" value="LOG" class="operation">LOG</button>
 <!--            <button type="button" id="all-clear" value="AC" class="undo-op, span-two">AC</button>-->
-            <button type="button" id="all-clear" value="AC" class="undo-op, span-two">AC</button>
-            <button type="button" id="undo" value="UNDO" class="undo-op, span-two">UNDO</button>
-<!--            <button type="button" id="exp" value="^" class="operation">^</button>-->
+            <button type="button" id="exp" value="^" class="operation">^</button>
+            <button type="button" id="all-clear" value="AC" class="undo-op">AC</button>
+            <button type="button" id="undo" value="UNDO" class="undo-op">UNDO</button>
             <button type="button" id="divide" value="/" class="operation">/</button>
-            <button type="button" id="one" value="1">1</button>
-            <button type="button" id="two" value="2">2</button>
-            <button type="button" id="three" value="3">3</button>
+            <button type="button" id="one" class="num" value="1">1</button>
+            <button type="button" id="two" class="num" value="2">2</button>
+            <button type="button" id="three" class="num" value="3">3</button>
             <button type="button" id="multiply" value="*" class="operation">*</button>
-            <button type="button" id="four" value="4">4</button>
-            <button type="button" id="five" value="5">5</button>
-            <button type="button" id="six" value="6">6</button>
+            <button type="button" id="four" class="num" value="4">4</button>
+            <button type="button" id="five" class="num" value="5">5</button>
+            <button type="button" id="six" class="num" value="6">6</button>
             <button type="button" id="add" value="+" class="operation">+</button>
-            <button type="button" id="seven" value="7">7</button>
-            <button type="button" id="eight" value="8">8</button>
-            <button type="button" id="nine" value="9">9</button>
+            <button type="button" id="seven" class="num" value="7">7</button>
+            <button type="button" id="eight" class="num" value="8">8</button>
+            <button type="button" id="nine" class="num" value="9">9</button>
             <button type="button" id="subtract" value="-" class="operation">-</button>
-            <button type="button" id="decimal" value=".">.</button>
-            <button type="button" id="zero" value="0">0</button>
+            <button type="button" id="decimal" class="num" value=".">.</button>
+            <button type="button" id="zero" class="num" value="0">0</button>
             <button type="button" id="equals" value="=" class="operation">=</button>
-        </section>
-
+        </div>
 </body>
 </html>

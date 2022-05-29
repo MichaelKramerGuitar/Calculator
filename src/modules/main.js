@@ -16,6 +16,7 @@ function testCalc() {
 testCalc();
 
 // alert when page loads
+
 window.addEventListener('load', () => {
     alert('Welcome to Calculator!\nWe\'re almost loaded up and ready to begin...');
     // prompt for name
@@ -27,7 +28,6 @@ window.addEventListener('load', () => {
     document.body.appendChild(welcome);
     alert("Welcome, " + name + "!")
 });
-
 
 
 // calculator
@@ -43,6 +43,8 @@ const previous = document.getElementById('previous');
 
 const operations = document.getElementsByClassName('operation');
 const undoOps = document.getElementsByClassName('undo-op');
+const nums = document.getElementsByClassName('num');
+
 for (let i = 0; i < (operations.length - 1); i++) { // arbitrarily exhibiting a for loop
     console.log(operations[i])
 }
@@ -61,21 +63,19 @@ while(less) { // arbitrarily exhibiting a while loop
     }
 }
 
-//const undoOps = document.getElementsByClassName('undo-op');
-
 current.innerHTML = calc.display(); // initialized at 0
+
+let buttonsPressed = [] // remember latest button pressed like .push(event.target.id)
 
 input.addEventListener("click", (event) => {
     previous.innerHTML += " " + event.target.value; // populate history of commands
     if (event.target.id !== "equals" && event.target.id in operations) {
-        operator.innerHTML = event.target.value; // populate operation area
-    } else if (!(event.target.id in operations)) { // numbers or undo's
-        // alert('number or undo op')
-        current.innerHTML = event.target.value;
-        if (calc.getValue() === 0) { // first operation and any subsequent when current value is zero
-            calc.execute(new Add(parseFloat(event.target.value)))
-        }
-        else if (event.target.id === "undo") {
+       operator.innerHTML = event.target.value; // populate operation area
+       if (calc.getValue() === 0) { // first operation, need to auto add operand to calculator value
+           calc.execute(new Add(parseFloat(current.innerHTML)))
+       }
+    } else if (event.target.id in undoOps) { // numbers or undo's
+        if (event.target.id === "undo") {
             calc.undo(); // undo previous operation
             current.innerHTML = calc.display();
         }
@@ -83,24 +83,31 @@ input.addEventListener("click", (event) => {
             calc.setValue(0);
             current.innerHTML = calc.display();
         }
-    }  else { // get proper operator
-        if (operator.innerHTML === "/") {
-            calc.execute(new Divide(parseFloat(current.innerHTML)))
-            current.innerHTML = calc.display();
-        } else if (operator.innerHTML === "+") {
+    } else if (event.target.id in nums) {
+        if (current.innerHTML === "0") {
+            firstOp(event.target.value)
+        } else {
+            appendCurrentOperand(event.target.value)
+        }
+
+    } else { // get proper operator
+        if (operator.innerHTML === "+") {
             calc.execute(new Add(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
-        } else if (operator.innerHTML === "*") {
+        } else if (operator.innerHTML === "/") {
+            calc.execute(new Divide(parseFloat(current.innerHTML)))
+            current.innerHTML = calc.display();
+        }  else if (operator.innerHTML === "*") {
             calc.execute(new Multiply(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
         } else if (operator.innerHTML === "-") {
-            calc.execute(new Subtract(parseFloat(current.innerText)))
+            calc.execute(new Subtract(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
         } else if (operator.innerHTML === "^") {
-            calc.execute(new Exponent(parseFloat(current.innerText)))
+            calc.execute(new Exponent(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
         } else if (operator.innerHTML === "LOG") {
-            calc.execute(new Logarithm(parseFloat(current.innerText)))
+            calc.execute(new Logarithm(parseFloat(current.innerHTML)))
             current.innerHTML = calc.display();
         }
         evaluateSize()
@@ -108,6 +115,7 @@ input.addEventListener("click", (event) => {
         operator.innerHTML = "";
         promptContinue()
     }
+    buttonsPressed.push(event.target.id)
 })
 
 function evaluateSize() { // as per requirements
@@ -132,3 +140,16 @@ async function promptContinue() { // as per requirements
     }
 }
 
+function firstOp(number) {
+    current.innerHTML = number;
+    //calc.execute(new Add(parseFloat(number)))
+}
+
+function appendCurrentOperand(number) {
+    let latestIDPressed = buttonsPressed.pop();
+    if (latestIDPressed in operations || latestIDPressed in undoOps) {
+        current.innerHTML = number;
+    } else {
+        current.innerHTML += number;
+    }
+}

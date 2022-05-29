@@ -18,7 +18,6 @@ class Operation { // Abstract Command
     getValue() {
         return this.#value;
     }
-
 }
 
 // Concrete Commands
@@ -134,3 +133,18 @@ export class Calculator {
 }
 
 // Invoker: the user pushing the buttons on the calculator
+
+// Client in Command Pattern
+function testCalc() {
+    let calculator = new Calculator();
+
+    calculator.execute(new Add(10));
+    calculator.execute(new Multiply(10));
+    calculator.execute(new Logarithm(10));
+    calculator.execute(new Add(34.56));
+
+    calculator.undo();
+
+    console.log("\nCurrent Value: " + calculator.display());
+}
+testCalc();
