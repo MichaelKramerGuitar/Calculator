@@ -3,7 +3,6 @@
 //https://medium.com/@yuribett/javascript-abstract-method-with-es6-5dbea4b00027
 
 // Command Pattern
-
 class Operation { // Abstract Command
 
     #value; // private
@@ -131,6 +130,7 @@ export class Calculator {
     }
 
 }
+
 
 // Invoker: the user pushing the buttons on the calculator
 

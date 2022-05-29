@@ -1,3 +1,6 @@
+### Author: Michael Kramer
+#### Email: mgkramer@bu.edu
+
 # Simple JavaScript Calculator
 
 ## Requirements 
@@ -33,4 +36,48 @@ step-by-step):
 # How To Run
 * Open ```index.html``` in your favorite web browser and use like you would any other calculator
 
+# Notes on How Requirements are met
+* I chose to implement a more traditional (and in my opinion robust) calculator assignment
+* All above requirements still met
+  * For 7) "Add A loop":
+    * I accomplished this point with a function called from within an event listener (line 243 ```promptContinue()```)
+    * Loops are arbitrarily demonstrated in main.js between lines 181 and 191 but are not important to the program
 
+# Project Structure
+```
+└───src
+    │   index.html
+    │
+    ├───modules
+    │       calculator.js
+    │       main.js
+    │       package.json
+    │
+    └───styles
+            style.css
+```
+* Javascript code was initially modularized 
+  * The calculator was defined in its own file ```calculator.js``` and imported into ```main.js```
+  * However, the browsers were throwing an error since my ```<script>``` tag necessarily had the attribute ```type=module```
+    * Consequently, although my code worked when hosted locally (through IDE localhost) it did not load this way when opened directly in browsers
+    * I decided to refactor putting all code in ```main.js``` thus un-modularizing the project structure
+    * I kept the evidence of modularization to see if I can figure out a work around in the future as this would be preferred
+    * For this submission all Javascript code runs from ```main.js``` as a consequent of the above described modularization issue in the browser
+
+# How I went above and beyond
+* This is a fully functioning calculator including
+  * addition
+  * subtraction
+  * division
+  * multiplication
+  * exponents
+  * logs
+  * undo's of most recent operation
+  * all clear/reset to 0
+* I employed a design pattern learned in my previous design patterns class "The Command Pattern" which supports undo operations
+* The Calculator is fully styled, sources are given in comments where appropriate
+
+# Known Issues
+* The exponent and log ```undo``` functions have faulty logic
+  * This needs to be addressed in the future 
+    * However, the overall calculator function logic is correct 
