@@ -201,7 +201,7 @@ input.addEventListener("click", (event) => {
        if (calc.getValue() === 0) { // first operation, need to auto add operand to calculator value
            calc.execute(new Add(parseFloat(current.innerHTML)))
        }
-    } else if (event.target.id in undoOps) { // numbers or undo's
+    } else if (event.target.id in undoOps) { //undo's
         if (event.target.id === "undo") {
             calc.undo(); // undo previous operation
             current.innerHTML = calc.display();

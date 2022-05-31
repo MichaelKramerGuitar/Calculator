@@ -4,6 +4,17 @@ https://uicookies.com/css-background-pattern/*/
 
 /*https://freshman.tech/css-grid-calculator/*/
 
+@media screen and (max-width: 640px){
+
+    /*
+    make tables smaller on phones, mobile first
+    */
+    .calculator > button {
+        font-size: 1rem;
+    }
+
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
